@@ -108,12 +108,12 @@ func bot() {
 }
 
 func start(b *gotgbot.Bot, ctx *ext.Context) error {
-	_, err := ctx.EffectiveMessage.Reply(b, fmt.Sprintf(`
-		Hola! Soy @%s, te notificaré de los hilos que me solicites.
+	_, err := ctx.EffectiveMessage.Reply(b, `
+Hola! Te notificaré de los hilos que me solicites.
 
-		Para suscribirte a un hilo, usa el comando /s seguido de la URL del hilo.
-		Para desuscribirte de un hilo, usa el comando /u seguido de la URL del hilo.
-	`, b.User.Username), &gotgbot.SendMessageOpts{
+Para suscribirte a un hilo, usa el comando /s seguido de la URL del hilo.
+Para desuscribirte de un hilo, usa el comando /u seguido de la URL del hilo.
+	`, &gotgbot.SendMessageOpts{
 		ParseMode: "markdown",
 	})
 	if err != nil {
