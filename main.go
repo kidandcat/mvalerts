@@ -111,8 +111,9 @@ func start(b *gotgbot.Bot, ctx *ext.Context) error {
 	_, err := ctx.EffectiveMessage.Reply(b, `
 Hola! Te notificaré de los hilos que me solicites.
 
-Para suscribirte a un hilo, usa el comando /s seguido de la URL del hilo.
-Para desuscribirte de un hilo, usa el comando /u seguido de la URL del hilo.
+Para recibir los mensajes enviados a un hilo, usa el comando /s seguido de la URL del hilo.
+
+Para dejar de recibir notificaciones sobre un hilo, usa el comando /u seguido de la URL del hilo.
 	`, &gotgbot.SendMessageOpts{
 		ParseMode: "markdown",
 	})
